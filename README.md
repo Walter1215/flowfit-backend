@@ -1,42 +1,92 @@
-# FlowFit Backend API
+# FlowFit Backend
 
-Backend fitness tracking API built using Python Flask and RESTful routes. Implements workout data handling, JSON request/response workflows, and backend API development concepts.
+Backend API for the FlowFit fitness application built using Flask.
 
-## Current Features
+## Overview
 
-* Flask backend setup
-* GET API routes
-* POST API routes
-* JSON request handling
-* Workout data storage
-* curl API testing
+FlowFit Backend is a beginner-friendly REST API project designed to practice backend development concepts including routing, JSON handling, and CRUD operations. Workout data is currently stored in memory using Python lists and dictionaries.
 
-### GET Routes
+## Features
 
-* `/`
-* `/workouts`
-* `/users`
-
-### POST Routes
-
-* `/add-workout`
+* View all workouts
+* View a workout by name
+* View a workout by index
+* Add new workouts using POST requests
+* Update existing workouts using PUT requests
+* Delete workouts using DELETE requests
+* JSON request and response handling
+* REST API routing with Flask
 
 ## Technologies
 
 * Python
 * Flask
+
+## API Endpoints
+
+### GET Routes
+
+```text
+GET /
+GET /workouts
+GET /workouts/<name>
+GET /workouts/index/<index>
+```
+
+### POST Routes
+
+```text
+POST /add-workout
+```
+
+### PUT Routes
+
+```text
+PUT /update-workout/<name>
+```
+
+### DELETE Routes
+
+```text
+DELETE /delete-workout/<name>
+```
+
+## Example Workout Object
+
+```json
+{
+  "name": "Pushups",
+  "sets": 3
+}
+```
+
+## Concepts Practiced
+
 * REST APIs
-* JSON
+* CRUD Operations
+* Route Parameters
+* JSON Data Handling
+* Lists and Dictionaries
+* Backend Development Fundamentals
 
 ## Future Improvements
 
-* PostgreSQL integration
-* Persistent database storage
+* Add workout IDs
+* Input validation and error handling
+* PostgreSQL database integration
+* Persistent data storage
 * User authentication
-* Workout tracking enhancements
-* Frontend/mobile integration
+* Project structure with separate routes and models
 
-## Run
+## Run Locally
 
 ```bash
+pip install -r requirements.txt
 python3 server.py
+```
+
+Server runs at:
+
+```text
+http://127.0.0.1:5000
+```
