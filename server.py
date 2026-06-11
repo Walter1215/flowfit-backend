@@ -72,6 +72,28 @@ def delete_workout(name):
 
     return {"message": "Workout not found"}
 
+@app.route("/update-workout/<name>", methods=["PUT"])
+def update_workout(name):
+
+    data = request.json
+
+    for workout in workouts:
+
+        if workout["name"].lower() == name.lower():
+
+            if "name" in data:
+                workout["name"] = data["name"]
+
+            if "sets" in data:
+                workout["sets"] = data["sets"]
+
+            return {
+                "message": "Workout updated",
+                "workout": workout
+            }
+
+    return {"message": "Workout not found"}
+
 
 if __name__ == "__main__":
     app.run(debug=True)
