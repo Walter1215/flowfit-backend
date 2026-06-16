@@ -1,92 +1,42 @@
 # FlowFit Backend
 
-Backend API for the FlowFit fitness application built using Flask.
-
-## Overview
-
-FlowFit Backend is a beginner-friendly REST API project designed to practice backend development concepts including routing, JSON handling, and CRUD operations. Workout data is currently stored in memory using Python lists and dictionaries.
+Backend fitness tracking API built with Flask to practice REST APIs, CRUD operations, JSON handling, and backend development fundamentals.
 
 ## Features
 
-* View all workouts
-* View a workout by name
-* View a workout by index
-* Add new workouts using POST requests
-* Update existing workouts using PUT requests
-* Delete workouts using DELETE requests
+* Create, read, update, and delete workouts
 * JSON request and response handling
-* REST API routing with Flask
+* Route parameters
+* Basic error handling
 
 ## Technologies
 
 * Python
 * Flask
+* REST APIs
+* JSON
 
 ## API Endpoints
 
-### GET Routes
-
 ```text
-GET /
-GET /workouts
-GET /workouts/<name>
-GET /workouts/index/<index>
+GET     /workouts
+POST    /workouts
+GET     /workouts/<name>
+PUT     /workouts/<name>
+DELETE  /workouts/<name>
 ```
 
-### POST Routes
-
-```text
-POST /add-workout
-```
-
-### PUT Routes
-
-```text
-PUT /update-workout/<name>
-```
-
-### DELETE Routes
-
-```text
-DELETE /delete-workout/<name>
-```
-
-## Example Workout Object
-
-```json
-{
-  "name": "Pushups",
-  "sets": 3
-}
-```
-
-## Concepts Practiced
-
-* REST APIs
-* CRUD Operations
-* Route Parameters
-* JSON Data Handling
-* Lists and Dictionaries
-* Backend Development Fundamentals
-
-## Future Improvements
-
-* Add workout IDs
-* Input validation and error handling
-* PostgreSQL database integration
-* Persistent data storage
-* User authentication
-* Project structure with separate routes and models
-
-## Run Locally
+## Run
 
 ```bash
 pip install -r requirements.txt
 python3 server.py
 ```
 
-Server runs at:
+## Future Improvements
 
-```text
-http://127.0.0.1:5000
+* PostgreSQL integration
+* Persistent data storage
+
+```
 ```
